@@ -1,7 +1,9 @@
-import { Card } from "./components/ui/card";
+
+import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { useState } from "react";
 import Head from "next/head";
+import Image from "next/image";
 
 const weeks = [
   {
@@ -68,24 +70,27 @@ export default function TrainingPlanner() {
   return (
     <>
       <Head>
-        <title>U9-U11 Træningsplan</title>
+        <title>Stavtrup IF Træningsplan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Ugeplan for fodboldtræning - U9 til U11" />
+        <meta name="description" content="Ugeplan for fodboldtræning - U9 til U11, Stavtrup IF" />
       </Head>
       <div className="p-4 space-y-4 max-w-md mx-auto">
-        <h1 className="text-2xl font-bold text-center">U9-U11 Træningsplan</h1>
+        <div className="flex justify-center">
+          <Image src="/stavtrup-logo.png" alt="Stavtrup IF Logo" width={100} height={100} />
+        </div>
+        <h1 className="text-2xl font-bold text-center text-[#007749]">Stavtrup IF U9-U11 Træningsplan</h1>
         <div className="grid grid-cols-2 gap-2">
           {weeks.map((week) => (
-            <Button key={week.uge} onClick={() => setSelectedWeek(week)}>
+            <Button key={week.uge} onClick={() => setSelectedWeek(week)} className="bg-[#007749] hover:bg-[#005f36]">
               Uge {week.uge}
             </Button>
           ))}
         </div>
 
         {selectedWeek && (
-          <Card className="mt-4">
+          <Card className="mt-4 border border-[#007749]">
             <CardContent className="space-y-2 p-4">
-              <h2 className="text-xl font-semibold">Uge {selectedWeek.uge}</h2>
+              <h2 className="text-xl font-semibold text-[#007749]">Uge {selectedWeek.uge}</h2>
               <p><strong>Fokus:</strong> {selectedWeek.fokus}</p>
               <p><strong>Opvarmning:</strong> {selectedWeek.opvarmning}</p>
               <p><strong>Teknik:</strong> {selectedWeek.teknik}</p>
