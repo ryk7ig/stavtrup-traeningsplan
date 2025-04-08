@@ -1,0 +1,21 @@
+
+/* Globale stilarter til Stavtrup IF app */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+h1, h2 {
+  color: #007749;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
