@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card } from "./components/ui/card";
+import { Button } from "./components/ui/button";
 import { useState } from "react";
 import Head from "next/head";
 
